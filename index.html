@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Một đám mây hồng, một dòng chúc ngủ ngon và một cơn mưa trái tim dành cho bà.">
+  <title>Ngủ ngon nha bà ☁️</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='black'/%3E%3Cpath d='M17 44a10 10 0 1 1 1-20 15 15 0 0 1 29 1 10 10 0 0 1-1 19Z' fill='%23df00a9'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/Lobster-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main id="scene" class="scene" aria-label="Đám mây hồng phát sáng, chữ chúc ngủ ngon chạy ngang và mưa trái tim">
+    <canvas id="canvas" aria-hidden="true"></canvas>
+    <div id="message-bar" class="message-bar" aria-hidden="true">
+      <div id="message-track" class="message-track"><span id="message-text"></span></div>
+    </div>
+    <p id="accessible-message" class="sr-only"></p>
+  </main>
+
+  <div id="loading" class="loading" aria-label="Đang mở đám mây">
+    <svg class="clock" viewBox="0 0 200 230" aria-hidden="true">
+      <circle cx="100" cy="92" r="76" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <g font-family="Lobster, cursive" font-size="16" text-anchor="middle" fill="currentColor">
+        <text x="100" y="32">12</text><text x="132" y="39">1</text><text x="156" y="61">2</text>
+        <text x="166" y="99">3</text><text x="156" y="128">4</text><text x="132" y="153">5</text>
+        <text x="100" y="163">6</text><text x="68" y="154">7</text><text x="44" y="130">8</text>
+        <text x="33" y="99">9</text><text x="44" y="65">10</text><text x="68" y="41">11</text>
+      </g>
+      <path class="hour-hand" d="M100 93 100 49" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      <path class="minute-hand" d="M100 93 100 39" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="100" cy="93" r="5" fill="currentColor"/>
+      <text x="100" y="210" font-family="Arial,sans-serif" font-size="23" letter-spacing="4" text-anchor="middle" fill="currentColor">LOADING</text>
+    </svg>
+  </div>
+
+  <div class="controls" id="controls">
+    <button id="pause" type="button" aria-label="Tạm dừng chuyển động" aria-pressed="false" title="Tạm dừng">
+      <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m7 4 14 8-14 8Z"/></svg>
+    </button>
+    <button id="sound" type="button" aria-label="Bật nhạc" aria-pressed="false" title="Bật nhạc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m11 5-5 4H3v6h3l5 4V5Z"/><path class="sound-off" d="m16 9 6 6m0-6-6 6"/><path class="sound-on" d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>
+    </button>
+  </div>
+  <audio id="music" src="assets/nhac-ngu-ngon.m4a" preload="none" loop></audio>
+  <noscript><p class="fallback">Bà ơi, hôm nay vất vả rồi. Chuyện còn lại, để mai tính. Ngủ ngon nha bà.</p></noscript>
+</body>
+</html>
